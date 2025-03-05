@@ -1,0 +1,122 @@
+<div class="modal-wrapper" *ngIf="modalAberto">
+  <div class="modal">
+    <div class="modal-header">
+      <h3>Sacola de Compras</h3>
+      <button class="fechar-modal" (click)="fecharModal()">&times;</button>
+    </div>
+    <div class="modal-body">
+      <ul>
+        <li *ngFor="let item of itensNaSacola" class="item">
+          <img
+            class="product-img"
+            [src]="item.imagemUrl"
+            alt="{{ item.itens }}"
+          />
+          <div class="item-info">
+            <div class="itens">
+              {{ item.nome }}
+              <span class="span-item">Itens: </span>{{ item.itens }}
+            </div>
+            <div class="classe-container">
+              <div class="preco">{{ item.preco | currency : "R$: " }}</div>
+              <img
+                class="w-icone"
+                src="assets/icone/trash.png"
+                (click)="removerItem(item)"
+                style="cursor: pointer"
+              />
+              <div class="quantidade">{{ item.quantidade }}</div>
+              <img
+                class="w-icone"
+                src="assets/icone/plus.png"
+                (click)="adicionarItem(item)"
+                style="cursor: pointer"
+              />
+            </div>
+          </div>
+        </li>
+      </ul>
+      <p class="total">
+        Total com entrega: {{ calcularValorTotal() | currency : "R$: " }}
+      </p>
+
+      <div class="line"></div>
+      <div class="client">
+        <h4>Informe seu número de Telefone abaixo:</h4>
+
+        <div class="client-check">
+         
+          <input
+            type="text"
+            id="telefoneCliente"
+            [(ngModel)]="telefoneClienteInput"
+            (input)="onInputChangePhone($event)"
+            maxlength="15"
+            placeholder="(92) 99200-0000"
+            [disabled]="telefoneBloqueado"
+          />
+
+          <button class="plus" (click)="verificarClientePorTelefone()">
+            +
+          </button>
+        </div>
+        <div *ngIf="telefoneBloqueado" class="cliente-encontrado">
+          <img
+            class="check"
+            src="assets/icone/check-mark.png"
+            alt="Cliente encontrado"
+          />
+          <span>Cliente encontrado: {{ nomeCliente }}</span>
+        </div>
+
+        
+
+      <app-inf-client *ngIf="showFormClient" (formSubmit)="receberform($event)">
+      </app-inf-client>
+
+      <div class="line"></div>
+      <div class="class-container" *ngIf="telefoneBloqueado">
+        <div class="pay">
+          <img
+            class="w-icone"
+            src="assets/icone/card.gif"
+            data-opcao="Cartão"
+            (click)="enviarPedido('Cartão')"
+            style="cursor: pointer"
+            *ngIf="
+              opcaoPagamentoSelecionada == 'Cartão' ||
+              !opcaoPagamentoSelecionada
+            "
+          />
+          <img
+            class="w-icone"
+            src="assets/icone/dinner.gif"
+            data-opcao="Dinner"
+            (click)="enviarPedido('Dinner')"
+            style="cursor: pointer"
+            *ngIf="
+              opcaoPagamentoSelecionada == 'Dinner' ||
+              !opcaoPagamentoSelecionada
+            "
+          />
+          <img
+            class="w-icone"
+            src="assets/icone/pix.png"
+            data-opcao="PIX"
+            (click)="enviarPedido('PIX')"
+            style="cursor: pointer"
+            *ngIf="
+              opcaoPagamentoSelecionada === 'PIX' || !opcaoPagamentoSelecionada
+            "
+          />
+        </div>
+      </div>
+
+      <div class="finalizar-center" >
+        <button class="finalizar" (click)="finalizarPedido()" [disabled]="!telefoneBloqueado" >
+          Fazer pedido
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

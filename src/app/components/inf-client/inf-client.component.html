@@ -1,0 +1,50 @@
+<div class="modal-overlay" *ngIf="modalAberto">
+  <div class="modal">
+   
+    <div class="modal-header">
+      <h3>Informações do Cliente</h3>
+      <button class="fechar-modal" (click)="fecharModal()">&times;</button>
+    </div>
+    <form [formGroup]="form" (ngSubmit)="sendForm()">
+      <div class="modal-body">
+        <div class="info-cliente">
+          <div>
+            <div class="form-group">
+              <label for="nome">Nome:</label>
+              <input type="text" id="nome" required formControlName="name" placeholder="Nome e Sobrenome"  />
+            </div>
+            <div class="form-group">
+              <label for="telefone">Telefone:</label>
+              <input type="text" formControlName="telefone" maxlength="15" (input)="onInputChangePhone($event)" title="Digite o numero sem caracteres" placeholder="92 992000000" required />
+            </div>
+            <div class="form-group">
+              <label for="cep">CEP:</label>
+              <input type="text" (input)="onInputChange($event)" maxlength="8" formControlName="cep" (blur)="buscarCep()" placeholder="00000000" />
+              <button type="button" (click)="buscarCep()">Buscar CEP</button>
+            </div>
+          </div>
+
+          <div class="form-address">
+            <label for="address">Endereço:</label>
+            <input type="text" formControlName="address" placeholder="Seu endereço" required  />
+          </div>
+          <div class="form-address">
+            <label for="num">Nr:</label>
+            <input type="text" (input)="onInputChangeNum($event)" formControlName="num" placeholder="Nr do Estabelecimento" required  />
+          </div>
+          <div class="form-address">
+            <label for="bairro">Bairro:</label>
+            <input type="text" formControlName="bairro" placeholder="Bairro" required />
+          </div>
+          <!-- <div class="form-address">
+            <label for="bairro">Ponto Referencia:</label>
+            <input type="text" formControlName="Ponto de Referencia" placeholder="Ponto de Referencia" required />
+          </div> -->
+        </div>
+        <div class="finalizar-center">
+          <button type="submit" class="finalizar">Enviar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

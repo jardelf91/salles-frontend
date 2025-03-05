@@ -1,0 +1,56 @@
+<app-page-body>
+  <h2>Métodos de Pagamento</h2>
+
+  <button (click)="toggleForm()" class="btn-new-method">Novo</button>
+
+  <div *ngIf="showForm" class="modal-overlay">
+    <div class="modal-content">
+      <span class="close-btn" (click)="toggleForm()">&times;</span>
+      <h2>Cadastrar Método de Pagamento</h2>
+      <form [formGroup]="paymentMethodForm" (ngSubmit)="addPaymentMethod()">
+        <label for="name">Nome:</label>
+        <input id="name" formControlName="method" required />
+
+        <button type="submit" [disabled]="paymentMethodForm.invalid">
+          Cadastrar
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nome</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let method of paymentMethods">
+        <td>{{ method.id }}</td>
+        <td>{{ method.method }}</td>
+
+        <td>
+          <button
+            class="btn-icon delete-btn"
+            (click)="deletePaymentMethod(method.id)"
+          >
+            <i class="fa fa-trash"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p *ngIf="paymentMethods.length === 0">
+    Nenhum método de pagamento cadastrado.
+  </p>
+  <app-modal
+    [visible]="showModal"
+    title="Confirmação"
+    message="Deseja realmente salvar este registro?"
+    (onConfirm)="handleConfirm()"
+    (onCancel)="handleCancel()"
+  ></app-modal>
+</app-page-body>

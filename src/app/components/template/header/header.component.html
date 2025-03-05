@@ -1,0 +1,26 @@
+<header *ngIf="uiService.uiControlsVisibility | async">
+  <div class="IconView">
+    <div class="SearchContainer">
+      <img src="assets/icone/Search.png" class="SearchIcon" />
+      <input type="text" class="SearchInput" placeholder="Buscar" />
+    </div>
+  </div>
+
+  <div class="MetaView">
+    <div class="LastIcon">
+      <img class="w-icone" src="assets/icone/notification.svg" (click)="onMenuClick()" />
+      
+      <!-- Ícone do usuário (clicável) -->
+      <div class="user-container" (click)="toggleMenu()">
+        <img class="user-icon" src="assets/icone/logout.svg"  />
+        
+      </div>
+
+      <!-- Dropdown do menu -->
+      <div class="dropdown-menu" *ngIf="menuAberto">
+        <p class="name">{{ user.name }}</p>
+        <button  (click)="logout()">Sair</button>
+      </div>
+    </div>
+  </div>
+</header>

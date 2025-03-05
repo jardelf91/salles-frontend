@@ -1,0 +1,32 @@
+.button-content {
+  display: flex;
+  align-items: center;
+  width: 234px;
+  height: 44px;
+  position: absolute;
+  left: 0;
+  border-radius: 5px;
+  font-size:  16px;
+  font-family: Inter;
+  background-color: #F5F5FA ;
+}
+ul {
+  padding: 0;
+}
+
+.w-icon {
+  width: 15px;
+  height: 15px;
+  margin-right: 10px; 
+  margin-left: 10px; 
+  
+}
+.button-content:active {
+  background-color: #45a049; 
+  color: #FFFFFF;
+}
+
+::marker{
+  color: transparent;
+}
+

@@ -1,0 +1,38 @@
+<app-page-body>
+  <div class="financial-container">
+    <h2>Fluxo de Caixa</h2>
+
+    <!-- Resumo Financeiro -->
+    <div class="summary">
+      <div class="summary-item revenue">
+        <h3>Receitas</h3>
+        <p>R$ {{ totalRevenue | number: '1.2-2' }}</p>
+      </div>
+      <div class="summary-item expenses">
+        <h3>Despesas</h3>
+        <p>R$ {{ totalExpenses | number: '1.2-2' }}</p>
+      </div>
+      <div class="summary-item balance">
+        <h3>Saldo</h3>
+        <p>R$ {{ balance | number: '1.2-2' }}</p>
+      </div>
+    </div>
+
+    <!-- Fluxo de Caixa Diário -->
+    <div class="stat-item">
+      <h3>Fluxo de Caixa Diário</h3>
+      <div *ngFor="let day of cashFlowByDay">
+        <p>{{ day.date }} - Receitas: R$ {{ day.revenue | number: '1.2-2' }} | Despesas: R$ {{ day.expenses | number: '1.2-2' }}</p>
+      </div>
+    </div>
+
+    <!-- Vendas por Método de Pagamento -->
+    <div class="stat-item">
+      <h3>Vendas por Método de Pagamento</h3>
+      <div *ngFor="let method of salesByPaymentMethod">
+        <p>{{ method.paymentMethod }}: R$ {{ method.total | number: '1.2-2' }}</p>
+      </div>
+    </div>
+
+  </div>
+</app-page-body>

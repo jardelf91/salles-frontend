@@ -1,0 +1,99 @@
+.button-content {
+  display: flex;
+  align-items: center;
+  width: 234px;
+  height: 44px;
+  position: absolute;
+  left: 0;
+  border-radius: 5px;
+  font-size:  16px;
+  font-family: Inter;
+  
+}
+ul {
+  padding: 0;
+}
+
+.w-icon {
+  width: 28px;
+  height: 28px;
+  margin-right: 10px; 
+  margin-left: 10px; 
+  
+}
+.button-content:active {
+  background-color: #00a8c2; 
+  color: #FFFFFF;
+  
+}
+
+::marker{
+  color: transparent;
+  
+}
+
+.MenuItem li {
+  cursor: pointer;
+}
+
+/* .MenuItem li.menuItemView.selecionado {
+  background-color: #00a8c2; 
+  border-radius: 10px;
+  width: 234px;
+  color: white;
+  align-items: center;
+  
+ 
+} */
+
+
+/* Estilo para o botão dentro de button-content */
+.button-content.selecionado {
+  background-color: #45a049;  /* Cor de fundo para o botão selecionado */
+  color: white;  /* Cor do texto para o botão selecionado */
+}
+
+/* Estilo de hover para o botão */
+.button-content:hover {
+  background-color: #45a049; /* Cor de fundo ao passar o mouse */
+}
+
+
+/* Aplicar a fonte Roboto em todo o menu */
+ul.MenuItem {
+  list-style: none; /* Remove os marcadores da lista */
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', Arial, sans-serif; /* Define a fonte principal */
+  font-size: 16px; /* Tamanho da fonte */
+  font-weight: 400; /* Peso regular */
+  color: #333; /* Cor do texto padrão */
+  margin-top: 30p;
+}
+
+/* Estilo para os itens da lista */
+ul.MenuItem li {
+  cursor: pointer;
+  padding: 10px 15px; /* Espaçamento interno */
+  border-radius: 5px; /* Cantos arredondados */
+  transition: background-color 0.3s, color 0.3s; /* Transições suaves */
+  font-family: 'Roboto', Arial, sans-serif; /* Garantir que a fonte seja usada nos itens */
+  font-size: 16px; /* Tamanho do texto dos itens */
+  color: #333; /* Cor do texto dos itens */
+  margin-top: 10px;
+}
+
+/* Estilo para o item selecionado */
+ul.MenuItem li.menuItemView.selecionado {
+  background-color: #45a049; /* Cor de fundo para o item selecionado */
+  color: white; /* Cor do texto do item selecionado */
+  font-family: 'Roboto', Arial, sans-serif; /* Garantir a fonte nos itens selecionados */
+  font-weight: 700; /* Destacar o item selecionado com peso mais forte */
+}
+
+/* Efeito de hover nos itens */
+ul.MenuItem li:hover {
+  background-color: #45a049; /* Cor de fundo ao passar o mouse */
+  color: #333; /* Cor do texto ao passar o mouse */
+  font-family: 'Roboto', Arial, sans-serif; /* Fonte consistente ao passar o mouse */
+}

@@ -1,0 +1,75 @@
+/* Overlay do modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Container do modal */
+.modal-container {
+  background: white;
+  padding: 20px 30px;
+  border-radius: 8px;
+  width: 400px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Título do modal */
+.modal-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* Mensagem do modal */
+.modal-message {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Ações do modal */
+.modal-actions {
+  display: inline-flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/* Botão de confirmação */
+.btn-confirm {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-confirm:hover {
+  background-color: #45a049;
+}
+
+/* Botão de cancelamento */
+.btn-cancel {
+  background-color: #f44336;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-cancel:hover {
+  background-color: #d32f2f;
+}

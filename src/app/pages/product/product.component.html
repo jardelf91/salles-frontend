@@ -1,0 +1,145 @@
+<app-page-body>
+  <h2>Produtos Cadastrados</h2>
+
+  <button (click)="toggleFormulario()" class="btn-novo-produto">
+    Novo Produto
+  </button>
+
+  <!-- Modal de Cadastro de Produto -->
+  <div *ngIf="exibirFormulario" class="modal-overlay">
+    <div class="modal-content">
+      <span class="close-btn" (click)="toggleFormulario()">&times;</span>
+      <h2>Cadastrar Produto</h2>
+      <form [formGroup]="produtoForm" (ngSubmit)="adicionarProduto()">
+        <label for="nome">Nome:</label>
+        <input id="nome" formControlName="name" required />
+
+        <label for="itens">Itens:</label>
+        <input id="itens" formControlName="items" required />
+
+        <label for="description">Descrição:</label>
+        <input id="description" formControlName="description" required />
+
+        <label for="preco">Preço:</label>
+        <input
+          id="preco"
+          formControlName="price"
+          type="text"
+          mask="separator.2"
+          thousandSeparator="."
+          decimalMarker=","
+          required
+        />
+
+        <label for="imagemUrl">URL da Imagem:</label>
+        <input id="imagemUrl" formControlName="imageUrl" required />
+
+        <label for="categoria">Categoria:</label>
+        <div class="categoria-container">
+          <select id="categoria" formControlName="categoryId" required>
+            <option value="" disabled>Selecione uma categoria</option>
+            <option *ngFor="let categoria of categorias" [value]="categoria.id">
+              {{ categoria.name }}
+            </option>
+          </select>
+          <i class="fa fa-plus" (click)="abrirModalCadastroCategoria()"></i>
+        </div>
+
+        <label for="ativo">Status:</label>
+        <label class="switch">
+          <input type="checkbox" formControlName="isEnabled" />
+          <span class="slider"></span>
+        </label>
+
+        <button type="submit" [disabled]="produtoForm.invalid">
+          Cadastrar
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div *ngIf="exibirModalConfirmacao" class="modal-overlay">
+    <div class="modal-content">
+      <span class="close-btn" (click)="toggleModalConfirmacao()">&times;</span>
+      <h2>Confirmação</h2>
+      <p>Deseja realmente salvar este produto?</p>
+      <button (click)="confirmarAdicaoProduto()">Sim</button>
+      <button (click)="cancelarAdicaoProduto()">Não</button>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nome</th>
+        <th>Itens</th>
+        <th>Descrição</th>
+        <th>Preço</th>
+        <th>Categoria</th>
+        <th>Imagem</th>
+        <th>Status</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let produto of produtosCadastrados">
+        <td>{{ produto.id }}</td>
+        <td>{{ produto.name }}</td>
+        <td>{{ produto.items }}</td>
+        <td>{{ produto.description }}</td>
+        <td>R$ {{ produto.price | number : "1.2-2" }}</td>
+        <td>{{ produto.categoriaName }}</td>
+        <td>
+          <img [src]="produto.imageUrl" alt="{{ produto.name }}" width="50" />
+        </td>
+        <td>{{ produto.isEnabled ? "Ativo" : "Inativo" }}</td>
+        <td>
+          <button class="btn-icon edit-btn" (click)="editarProduto(produto)">
+            <i class="fa fa-pencil"></i>
+          </button>
+          <button
+            class="btn-icon delete-btn"
+            (click)="excluirProduto(produto.id)"
+          >
+            <i class="fa fa-trash"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="paginador">
+    <button
+      (click)="carregarProdutos(currentPage - 1)"
+      [disabled]="currentPage === 0"
+    >
+      Anterior
+    </button>
+    <span>Página {{ currentPage + 1 }} de {{ totalPages }}</span>
+    <button
+      (click)="carregarProdutos(currentPage + 1)"
+      [disabled]="currentPage >= totalPages - 1"
+    >
+      Próxima
+    </button>
+  </div>
+
+  <p *ngIf="produtosCadastrados.length === 0">Nenhum produto cadastrado.</p>
+
+  <!-- Modal de Cadastro de Categoria -->
+  <div *ngIf="exibirModalCategoria" class="modal-overlay">
+    <div class="modal-content">
+      <span class="close-btn" (click)="fecharModalCadastroCategoria()"
+        >&times;</span
+      >
+      <h2>Cadastrar Categoria</h2>
+      <form [formGroup]="categoriaForm" (ngSubmit)="salvarCategoria()">
+        <label for="nomeCategoria">Nome da Categoria:</label>
+        <input id="nomeCategoria" formControlName="name" required />
+        <button type="submit" [disabled]="categoriaForm.invalid">
+          Salvar Categoria
+        </button>
+      </form>
+    </div>
+  </div>
+</app-page-body>

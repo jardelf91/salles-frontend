@@ -1,0 +1,14 @@
+<div class="wrapper"   (click)="isOpen = !isOpen" [ngClass]="{'wrapper-content-open': isOpen}">
+  <div class="button-content">
+    <img
+      class="w-icon"
+      src="{{ itemMenu.imgPath }}"
+      alt="{{ itemMenu.menuName }}"
+    />
+    {{ itemMenu.menuName }}
+  </div>
+  <div class="sub-menu-content" *ngIf="isOpen && itemMenu.subMenu?.length">
+    
+  </div>  
+</div>
+<div *ngIf="!last" class="alt"></div>
