@@ -1,0 +1,48 @@
+.button-content {
+  display: flex;
+  align-items: center;
+  width: 234px;
+  height: 44px;
+ 
+  border-radius: 10px;
+  margin-top: 5px;
+  font-size:  16px;
+  font-family: Inter;
+  /* border: solid 1px black; */
+  
+}
+
+.button-content:hover{
+  background-color: #00a8c2; 
+}
+
+.w-icon {
+  width: 15px;
+  height: 15px;
+  margin-right: 10px; 
+  margin-left: 10px; 
+  
+}
+.button-content:active {
+  background-color: #00a8c2; 
+  color: #FFFFFF;
+}
+.wrapper-content-open {
+  flex-direction: column;
+}
+.wrapper {
+  display: flex;
+}
+::marker{
+  color: transparent;
+}
+
+/* .alt{
+  height: 46px !important;
+} */
+.sub-menu-content {
+  display: flex;
+  width: 100%;
+  background-color: red;
+  height: 44px;
+}

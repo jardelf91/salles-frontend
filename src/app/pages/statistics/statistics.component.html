@@ -1,0 +1,47 @@
+<app-page-body>
+  <div class="statistics-container">
+    <h2>Estatísticas de Vendas</h2>
+
+    <!-- Total de Vendas -->
+    <div class="stat-item">
+      <h3>Total de Vendas</h3>
+      <p>R$ {{ totalSales | number: '1.2-2' }}</p>
+    </div>
+
+    <!-- Número de Pedidos -->
+    <div class="stat-item">
+      <h3>Número de Pedidos</h3>
+      <p>{{ totalOrders }}</p>
+    </div>
+
+    <!-- Vendas por Dia
+    <div class="stat-item">
+      <h3>Vendas por Dia</h3>
+      <div *ngFor="let day of salesByDay">
+        <p>{{ formatDate(day.date) }}: R$ {{ isNumber(day.total) ? (day.total | number: '1.2-2') : 'Valor inválido' }}</p>
+      </div>
+    </div> -->
+
+    <!-- Vendas por Método de Pagamento -->
+    <div class="stat-item">
+      <h3>Vendas por Método de Pagamento</h3>
+      <div *ngFor="let method of salesByPaymentMethod">
+        <p>{{ method.paymentMethod }}: R$ {{ isNumber(method.total) ? (method.total | number: '1.2-2') : 'Valor inválido' }}</p>
+      </div>
+    </div>
+
+    <!-- Vendas por Cliente
+    <div class="stat-item">
+      <h3>Vendas por Cliente</h3>
+      <div *ngFor="let customer of salesByCustomer">
+        <p>{{ customer.name }}: R$ {{ isNumber(customer.total) ? (customer.total | number: '1.2-2') : 'Valor inválido' }}</p>
+      </div>
+    </div> -->
+
+    <!-- Ticket Médio -->
+    <div class="stat-item">
+      <h3>Ticket Médio</h3>
+      <p>R$ {{ isNumber(averageTicket) ? (averageTicket | number: '1.2-2') : 'Valor inválido' }}</p>
+    </div>
+  </div>
+</app-page-body>

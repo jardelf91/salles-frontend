@@ -1,0 +1,53 @@
+<app-page-body>
+  <h2>Categorias</h2>
+
+  <button (click)="toggleFormulario()" class="btn-novo-produto">
+    Nova Categoria
+  </button>
+
+  <div *ngIf="exibirFormulario" class="modal-overlay">
+    <div class="modal-content">
+      <span class="close-btn" (click)="toggleFormulario()">&times;</span>
+      <h2>Cadastrar Categoria</h2>
+      <form [formGroup]="categoriaForm" (ngSubmit)="adicionarCategoria()">
+        <label for="nome">Nome:</label>
+        <input id="nome" formControlName="name" required />
+        <button type="submit" [disabled]="categoriaForm.invalid">
+          Cadastrar
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nome</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let categoria of categorias">
+        <td>{{ categoria.id }}</td>
+        <td>{{ categoria.name }}</td>
+        <td>
+          <button class="btn-icon delete-btn" (click)="excluirCategoria(categoria.id)">
+            <i class="fa fa-trash"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p *ngIf="categorias.length === 0">Nenhuma categoria cadastrada.</p>
+
+  <!-- Modal de confirmação -->
+  <app-modal
+    [visible]="exibirModal"
+    title="Confirmação"
+    message="Deseja realmente{{actionType}} esta categoria?"
+    (onConfirm)="confirmarAdicao()"
+    (onCancel)="cancelarAdicao()"
+  ></app-modal>
+</app-page-body>

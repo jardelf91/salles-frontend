@@ -1,0 +1,123 @@
+.BodyMainView {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0;
+  margin: 0;
+}
+
+.ContentBody {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  height: 100vh;
+  background-color: #f5f5fa;
+  position: relative;
+  z-index: 2;
+}
+
+.MenuView {
+  display: flex;
+  flex-direction: column;
+  width: 244px;
+  height: 100%;
+  background-color: #ffffff;
+  justify-content: flex-start;
+  border-right: 1px solid #d4d8da;
+  z-index: 1;
+}
+
+.logo-image {
+  padding-top: 28px;
+  padding-bottom: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 32px;
+}
+
+.menu-section,
+.other-section {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.header {
+  height: 61px;
+  background-color: #ffffff;
+}
+
+.Content {
+  position: relative;
+  flex: 1;
+  height: calc(100vh - 247px);
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.other-menu,
+.menu-title {
+  size: 15px;
+  font-family: Inter;
+  color: #7b8190;
+}
+.ContentContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-self: stretch;
+}
+
+.other-menu {
+  margin-left: 10px !important;
+}
+
+.menu-title {
+  margin-left: 10px !important;
+}
+
+
+.MenuView.closed {
+  width: 0;
+  overflow: hidden;
+  transition: width 0.3s ease;
+}
+
+.BodyMainView.menu-closed .ContentBody {
+  margin-left: 0;
+  transition: margin-left 0.3s ease;
+}
+.BodyMainView {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0;
+  margin: 0;
+}
+
+
+.MenuView {
+  display: flex;
+  flex-direction: column;
+  width: 244px; 
+  height: 100%;
+  background-color: #ffffff;
+  justify-content: flex-start;
+  border-right: 1px solid #d4d8da;
+  z-index: 1;
+  
+}
+
+.ContentContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-self: stretch;
+}

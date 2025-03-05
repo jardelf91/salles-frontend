@@ -1,0 +1,66 @@
+<app-top-bar></app-top-bar>
+
+<div class="container">
+  <div class="pedido">
+    <h2>Categorias</h2>
+    <ul class="categorias">
+      <li *ngFor="let categoria of categorias">
+        <a [href]="'#' + categoria.id">{{ categoria.nome }}</a>
+      </li>
+    </ul>
+    <div class="busca">
+      <input
+        type="text"
+        placeholder="Buscar produto"
+        [(ngModel)]="termoDeBusca"
+        (input)="buscarProduto()"
+      />
+      <button (click)="buscarProduto()">Buscar</button>
+    </div>
+    <ng-container *ngFor="let categoria of categorias">
+      <section [id]="categoria.id">
+        <h3>{{ categoria.nome }}</h3>
+        <div class="produtos">
+          <div class="produto" *ngFor="let produto of categoria.produtos">
+            <img
+              class="product-img"
+              [src]="produto.imagemUrl"
+              [alt]="produto.nome"
+            />
+            <h4>{{ produto.nome }}</h4>
+            <p>Itens: {{ produto.itens }}</p>
+            <p>Descrição: {{ produto.description }}</p>
+            <p>Preço: R$ {{ produto.preco.toFixed(2) }}</p>
+            <div class="botoes">
+              <button class="adicionar" (click)="adicionarAoCarrinho(produto)">
+                Adicionar
+              </button>
+              <span class="quantidade">{{ produto.quantidade }}</span>
+              <button class="remover" (click)="removerDoCarrinho(produto)">
+                Remover
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </ng-container>
+  </div>
+  <div>
+    <div
+      *ngIf="quantidadePedidos > 0"
+      class="carrinho"
+      (click)="toggleSacola()"
+    >
+      <img class="w-icone" src="assets/icone/car.gif" style="cursor: pointer" />
+      <span class="quantidade-carrinho">{{ quantidadePedidos }}</span>
+    </div>
+    <app-app-sacola
+      [itensNaSacola]="itensNaSacola"
+      [modalAberto]="mostrarSacola"
+      *ngIf="mostrarSacola"
+      (fecharModals)="fecharModal()"
+      (limparProdutosSalles)="limparSacola()"
+    >
+    </app-app-sacola>
+  </div>
+</div>

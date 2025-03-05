@@ -1,0 +1,283 @@
+.modal-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.modal {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  width: 80%;
+  max-width: 400px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+
+.modal-header h3 {
+  margin: 0;
+}
+
+.fechar-modal {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: red;
+}
+
+
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  margin-right: 5px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+button.finalizar {
+  background-color: #28a745;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.product-img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.line {
+  border-bottom: 1px solid #ccc;
+}
+
+.modal-body ul {
+  max-height: 300px;
+  overflow-y: auto;
+  margin: 0;
+  padding: 0;
+}
+
+.modal-body li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.product-img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  margin-right: 5px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+button.finalizar {
+  background-color: #28a745;
+  width: 100%;
+  height: 40px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.line {
+  border-bottom: 1px solid #ccc;
+}
+
+.w-icone {
+  width: 25px !important;
+}
+
+.info-cliente .form-group {
+  margin-bottom: 5px;
+}
+
+.classe-container {
+  display: flex;
+  align-items: center;
+  margin-right: 57px;
+  margin-left: 45px;
+  margin: 10;
+}
+
+.classe-container img,
+.classe-container .quandidade {
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+.quantidade {
+  font-weight: bold;
+  font-size: 18px;
+  border: 2px solid #000;
+  padding: 5px;
+  background-color: #fff;
+  color: #000;
+}
+
+.classe-container > * {
+  margin: 0 auto;
+}
+
+.pay {
+  display: flex;
+  justify-content: center;
+}
+
+.w-icone {
+  margin: 0 25px;
+  width: 45px;
+}
+
+.finalizar-center {
+  text-align: center;
+  padding-top: 5px;
+}
+
+.total {
+  text-align: center;
+  font-size: 15px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: bold;
+}
+
+.itens {
+  text-align: left;
+  font-size: 14px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.preco {
+  font-size: 10px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: bold;
+}
+
+.preco {
+  font-weight: bold;
+  font-size: 15px;
+  border: 1px solid #000;
+  padding: 5px;
+  background-color: #fff;
+  color: #000;
+  font-weight: bold;
+}
+
+.span-item {
+  font-weight: bold;
+  color: blue;
+}
+
+.info-cliente {
+  margin-bottom: 20px;
+  overflow: auto;
+  max-height: 150px;
+}
+
+.info-cliente h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.form-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  flex: 1;
+  font-weight: bold;
+}
+
+.form-group input {
+  flex: 2;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-left: 10px;
+}
+
+.form-address {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.form-address label {
+  flex: 1;
+  font-weight: bold;
+}
+
+.form-address input {
+  flex: 2;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-left: 10px;
+}
+
+.clients {
+  text-align: center;
+  width: 56px;
+}
+
+.client {
+  text-align: center;
+}
+
+.class-container {
+  padding-top: 15px;
+}
+
+
+.check{
+  width: 37px;
+  height: 37px;
+}
+
+.plus{
+  margin-left: 5px;
+}
+
+button:disabled {
+  background-color: #cccccc;  
+  color: #666666;             
+  cursor: not-allowed;        
+}

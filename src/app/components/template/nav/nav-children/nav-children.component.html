@@ -1,0 +1,12 @@
+<ul class="MenuItem">
+  <li
+    *ngFor="let itemMenu of menuListChildren; let last = last"
+    [ngClass]="
+      itemMenu.menuSelected ? 'menuItemView selecionado' : 'menuItemView'
+    "
+    routerLink="{{ itemMenu.navigateRouter }}"
+  >
+    <app-sub-nav [itemMenu]="itemMenu" [last]="last"></app-sub-nav>
+  </li>
+</ul>
+

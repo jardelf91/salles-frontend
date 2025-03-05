@@ -1,0 +1,75 @@
+<app-page-body>
+  <div class="order-container">
+    <h2>Lista de Pedidos</h2>
+
+    <!-- Campo de busca -->
+    <div class="search-container">
+      <label for="searchInput">Buscar:</label>
+      <input
+        id="searchInput"
+        type="text"
+        [(ngModel)]="searchTerm"
+        (input)="filterOrders()"
+        placeholder="Número do Pedido, Nome ou Telefone"
+      />
+    </div>
+
+    <table class="order-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Data do Pedido</th>
+          <th>Cliente</th>
+          <th>Endereço</th>
+          <th>Telefone</th>
+          <th>Forma de Pagamento</th>
+          <th>Total</th>
+          <th>Criado Em</th>
+          <th>Atualizado Em</th>
+          <th>Ações</th> <!-- Nova coluna para os ícones -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of filteredOrders">
+          <td>{{ order.id }}</td>
+          <td>{{ order.orderDate | date: 'dd/MM/yyyy HH:mm' }}</td>
+          <td>{{ order.customer?.name || 'Não informado' }}</td>
+          <td>{{ order.customer?.address || 'Não informado' }}</td>
+          <td>{{ order.customer?.phone || 'Não informado' }}</td>
+          <td>{{ order.paymentMethod?.method || 'Não informado' }}</td>
+          <td>R$ {{ order.total }}</td>
+          <td>{{ order.createdAt | date: 'dd/MM/yyyy HH:mm' }}</td>
+          <td>{{ order.updatedAt | date: 'dd/MM/yyyy HH:mm' }}</td>
+          <td>
+            <i class="fas fa-print" title="Imprimir Pedido" (click)="printOrder(order)" style="cursor: pointer; font-size: 20px; color: #4CAF50;"></i>
+            <i class="fas fa-paper-plane" title="Enviar Notificação" (click)="sendNotification(order)" style="cursor: pointer; font-size: 20px; color: #007BFF; margin-left: 10px;"></i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="paginador">
+      <!-- Botão para a página anterior -->
+      <button
+        (click)="prevPage()"
+        [disabled]="currentPage === 0"
+      >
+        Anterior
+      </button>
+    
+      <span>Página {{ currentPage + 1 }} de {{ totalPages }}</span>
+    
+      <!-- Botão para a próxima página -->
+      <button
+        (click)="nextPage()"
+        [disabled]="currentPage >= totalPages - 1"
+      >
+        Próxima
+      </button>
+    </div>
+
+    <p *ngIf="!filteredOrders.length" class="no-orders">
+      Nenhum pedido encontrado.
+    </p>
+  </div>
+</app-page-body>

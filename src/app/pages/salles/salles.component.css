@@ -1,0 +1,297 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  margin-top: 70px;
+  background-color: #f8f9fa;
+  color: #333333; 
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+button {
+  font-family: 'Roboto', Arial, sans-serif;
+  background-color: #007bff; 
+  color: #ffffff; 
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  
+}
+
+button:hover {
+  background-color: #0056b3; 
+}
+
+.categorias a {
+  font-family: 'Roboto', Arial, sans-serif;
+  color: #343a40; 
+  text-decoration: none;
+}
+
+.produto h4 {
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 18px;
+  color: #333333; 
+  font-weight: bold;
+}
+
+.carrinho {
+  font-family: 'Roboto', Arial, sans-serif;
+  background-color: #28a745;
+  color: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+}
+
+.carrinho:hover {
+  background-color: #218838; 
+}
+
+input,
+button {
+  font-family: 'Roboto', Arial, sans-serif; 
+}
+
+.produto {
+  font-family: 'Roboto', Arial, sans-serif;
+  border: 1px solid #ced4da; 
+  margin: 10px;
+  text-align: center;
+  border-radius: 12px; 
+  background-color: #fff; 
+  transition: transform 0.3s ease-in-out;
+}
+
+.produto .quantidade {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ff6f61; 
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+  margin-top: 70px;
+  background-color: #f8f9fa;
+  color: #333333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+ 
+}
+
+.categorias {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.categorias li {
+  margin-right: 20px;
+}
+
+.categorias a {
+  text-decoration: none;
+  color: #333;
+}
+
+.busca {
+  text-align: center;
+  margin-top: 20px;
+  
+}
+
+.busca input {
+  padding: 10px;
+  width: 200px;
+  margin-right: 10px ;
+  border-radius: 4px;
+}
+
+.busca button {
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.produtos {
+  display: flex;
+  flex-wrap: nowrap;
+  @media screen and (max-width: 1024px) {
+    flex-wrap: wrap;
+  }
+
+}
+
+.produto {
+  width: 30%;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.produto h4 {
+  font-size: 18px;
+}
+
+.botoes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.adicionar,
+.remover {
+  padding: 5px 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin: 0 5px;
+  border-radius: 5px;
+}
+
+.quantidade {
+  font-size: 18px;
+  margin: 0 5px;
+}
+
+.product-img{
+  width: 120px;
+  height: 90px;
+  object-fit:cover;
+}
+
+
+@media (min-width: 766px) {
+  .produtos {
+    display: flex;
+  }
+
+  .produto {
+    width: calc(33.33% - 20px);
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .produto {
+    width: 100%;
+  }
+}
+
+.carrinho {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: #fff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+}
+
+.fa-shopping-cart {
+  font-size: 24px;
+}
+
+.quantidade-carrinho {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #ffff;
+  font-size: 14px;
+  padding: 0px 12px;
+  border-radius: 150px;
+  width: 5px;
+  font-weight: bold;
+}
+
+.w-icone{
+  width: 50px;
+  height: 54px;
+  
+}
+
+.product-img {
+  width: 120px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 8px; 
+}
+
+/* dfkdf */
+
+.quantidade-carrinho {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #ffff;
+  font-size: 14px;
+  padding: 0px 12px;
+  border-radius: 150px;
+  font-weight: bold;
+}
+
+
+.adicionar
+{
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin: 0 5px;
+  border-radius: 5px;
+  font-size: 14px; 
+}
+
+.adicionar:hover,
+.remover:hover {
+  background-color: #0056b3;
+}
+
+
+.remover {
+  padding: 5px 10px;
+  background-color: crimson;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin: 0 5px;
+  border-radius: 5px;
+  font-size: 14px; 
+}
+
+
+

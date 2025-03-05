@@ -1,0 +1,31 @@
+<div class="BodyMainView">
+  <div class="ContentBody">
+    <div class="MenuView"
+    [class.closed]="!menuOpen"
+    *ngIf="uiService.uiControlsVisibility | async">
+      <div class="logo-image">
+        <img src="assets/imagem/Internapp-icon.svg" alt="Logo" />
+      </div>
+      <div>
+        <div class="menu-title">Gestão</div>
+        <app-nav></app-nav>
+      </div>
+      <div>
+        <app-nav-children></app-nav-children>
+      </div>
+      <div>
+        <div class="other-menu">Configuração</div>
+        <app-nav-unit></app-nav-unit>
+      </div>
+    </div>
+    <div class="ContentContainer">
+      <div class="header">
+        <app-header (menuToggle)="toggleMenu()"></app-header>
+      </div>
+      <div class="Content">
+        <ng-content></ng-content>
+      </div>
+      <div class="FooterView"></div>
+    </div>
+  </div>
+</div>

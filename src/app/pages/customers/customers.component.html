@@ -1,0 +1,77 @@
+<app-page-body>
+  <h2>Clientes</h2>
+
+  <button (click)="toggleFormulario()" class="btn-new-customer">
+    Novo Cliente
+  </button>
+
+  
+  <div *ngIf="showForm" class="modal-overlay">
+    <div class="modal-content">
+      <span class="close-btn" (click)="toggleFormulario()">&times;</span>
+      <h2>Cadastrar Cliente</h2>
+      <form [formGroup]="customerForm" (ngSubmit)="adicionarCliente()">
+        <label for="name">Nome:</label>
+        <input id="name" formControlName="name" required />
+
+        <label for="address">Endereço:</label>
+        <input id="address" formControlName="address" required />
+
+        <label for="number">Número:</label>
+        <input id="number" formControlName="number" required />
+
+        <label for="district">Bairro:</label>
+        <input id="district" formControlName="district" />
+
+        <label for="phone">Telefone:</label>
+        <input id="phone" formControlName="phone" required />
+
+        <button type="submit" [disabled]="customerForm.invalid">
+          Cadastrar
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nome</th>
+        <th>Endereço</th>
+        <th>Número</th>
+        <th>Bairro</th>
+        <th>Telefone</th>
+        <th>Criado em</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let customer of customers">
+        <td>{{ customer.id }}</td>
+        <td>{{ customer.name }}</td>
+        <td>{{ customer.address }}</td>
+        <td>{{ customer.number }}</td>
+        <td>{{ customer.district || '-' }}</td>
+        <td>{{ customer.phone }}</td>
+        <td>{{ customer.createdAt | date: 'short' }}</td>
+        <td>
+          <button class="btn-icon delete-btn" (click)="confirmarExclusao(customer)">
+            <i class="fa fa-trash"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p *ngIf="customers.length === 0">Nenhum cliente cadastrado.</p>
+
+  <!-- Modal de confirmação -->
+  <app-modal
+    [visible]="exibirModal"
+    title="Confirmação"
+    message="Deseja realmente {{ actionType }} este cliente?"
+    (onConfirm)="confirmarAcoes()"
+    (onCancel)="cancelarAcoes()"
+  ></app-modal>
+</app-page-body>

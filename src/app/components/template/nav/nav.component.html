@@ -1,0 +1,17 @@
+<ul class="MenuItem">
+  <li
+    *ngFor="let itemMenu of menuList; let last = last"
+    [ngClass]="
+      itemMenu.menuSelected ? 'menuItemView selecionado' : 'menuItemView'
+    "
+    routerLink="{{ itemMenu.navigateRouter }}"
+    (click)="selectMenuItem(itemMenu)"
+  >
+    <img
+      [src]="itemMenu.imgPath"
+      alt="{{ itemMenu.menuName }}"
+      class="w-icon"
+    />
+    {{ itemMenu.menuName }}
+  </li>
+</ul>
