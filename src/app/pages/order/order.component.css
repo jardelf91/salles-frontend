@@ -1,6 +1,6 @@
 /* Botão principal */
 .btn-new-method {
-  background-color: #4caf50;
+  background-color: #005566;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -11,7 +11,7 @@
 }
 
 .btn-new-method:hover {
-  background-color: #45a049;
+  background-color: #005566;
 }
 
 /* Modal */
@@ -57,7 +57,7 @@ table {
 }
 
 thead {
-  background-color: #4caf50;
+  background-color: #005566;
   color: white;
 }
 
@@ -132,7 +132,7 @@ p {
 .paginador button {
   padding: 5px 10px;
   border: none;
-  background-color: #45a049;
+  background-color: #005566;
   color: white;
   cursor: pointer;
 }

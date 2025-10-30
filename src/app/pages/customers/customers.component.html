@@ -38,8 +38,8 @@
       <tr>
         <th>Id</th>
         <th>Nome</th>
-        <th>Endereço</th>
-        <th>Número</th>
+        <th>cpf</th>
+        <th>Nome Social</th>
         <th>Bairro</th>
         <th>Telefone</th>
         <th>Criado em</th>
@@ -50,9 +50,9 @@
       <tr *ngFor="let customer of customers">
         <td>{{ customer.id }}</td>
         <td>{{ customer.name }}</td>
-        <td>{{ customer.address }}</td>
-        <td>{{ customer.number }}</td>
-        <td>{{ customer.district || '-' }}</td>
+        <td>{{ customer.cpf }}</td>
+        <td>{{ customer.socialName }}</td>
+        <td>{{ customer.role }}</td>
         <td>{{ customer.phone }}</td>
         <td>{{ customer.createdAt | date: 'short' }}</td>
         <td>

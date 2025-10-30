@@ -7,7 +7,7 @@ body {
 
 
 .btn-novo-produto {
-  background-color: #4caf50;
+  background-color: #005566;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -18,7 +18,7 @@ body {
 }
 
 .btn-novo-produto:hover {
-  background-color: #45a049;
+  background-color: #005566;
 }
 
 .modal-overlay {
@@ -101,7 +101,7 @@ table {
 }
 
 thead {
-  background-color: #4caf50;
+  background-color: #005566;
   color: white;
 }
 

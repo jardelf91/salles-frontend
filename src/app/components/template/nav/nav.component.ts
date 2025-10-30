@@ -37,12 +37,7 @@ export class NavComponent implements OnInit {
         menuSelected: false,
         navigateRouter: '/statistics',
       },
-      {
-        imgPath: 'assets/icone/delivery-man.png',
-        menuName: 'Lista de Pedidos',
-        menuSelected: false,
-        navigateRouter: '/order',
-      },
+     
       {
         imgPath: 'assets/icone/pay.png',
         menuName: 'Forma de pagamento',
@@ -56,24 +51,14 @@ export class NavComponent implements OnInit {
         navigateRouter: '/categories',
       },
 
-      {
-        imgPath: 'assets/icone/dairy-products.png',
-        menuName: 'produtos',
-        menuSelected: false,
-        navigateRouter: '/product',
-      },
+      
       {
         imgPath: 'assets/icone/customer-satisfaction.png',
         menuName: 'Cliente',
         menuSelected: false,
         navigateRouter: '/customers',
       },
-      {
-        imgPath: 'assets/icone/delivery-man.png',
-        menuName: 'pedidos',
-        menuSelected: false,
-        navigateRouter: '/venda',
-      },
+      
     ];
 
     const activeItem = this.menuList.find((item) =>

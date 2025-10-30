@@ -8,6 +8,6 @@ import { HttpClient } from '@angular/common/http';
 export class CustomersService extends CrudService {
 
   constructor(http: HttpClient) {
-    super(http, '/customers'); 
+    super(http, '/users'); 
   }
 }

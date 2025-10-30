@@ -4,68 +4,77 @@
   min-height: 100vh;
   justify-content: center;
   align-items: center;
-  background-color: #f0f0f0;
+  background: linear-gradient(135deg, #e0f7fa, #f1f8ff);
 }
 
 .left-section {
-  width: 389px;
+  width: 400px;
   background-color: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: calc(
-    100vh - 20px
-  ); /* Subtracting padding to ensure full height */
-  padding: 20px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Optional */
+  min-height: calc(100vh - 40px);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+      margin-left: 19px
 }
 
 .right-section {
   flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
 }
 
 .right-section .background-image {
-  width: 100%;
-  max-width: 530px;
+  max-width: 500px;
+  width: 90%;
   height: auto;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  border-radius: 16px;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 form {
   display: flex;
   flex-direction: column;
-  align-items: center;
   width: 100%;
-  max-width: 348px;
-  margin: 0 auto;
+  max-width: 350px;
 }
 
-input,
-button {
+input {
+  width: 100%;
+  height: 48px;
+  margin-top: 6px;
+  border: 1px solid #d0d7de;
+  border-radius: 10px;
+  padding: 0 14px;
+  font-size: 15px;
+  background-color: #fdfdfd;
+  transition: all 0.2s ease-in-out;
+}
+
+input:focus {
+  border-color: #03b7fc;
+  box-shadow: 0 0 5px rgba(3, 183, 252, 0.4);
+  outline: none;
+}
+
+.btn-primary {
   width: 100%;
   height: 50px;
-  margin-top: 5px;
-  display: block;
-  background-color: #f7f7f8;
+  font-size: 16px;
+  font-family: 'Nunito', sans-serif;
+  color: #fff;
   border: none;
-  border-radius: 6px;
-  padding: 0 10px;
-  box-sizing: border-box;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #03b7fc, #0077b6);
+  transition: all 0.2s ease-in-out;
 }
 
-button {
-  font-size: 16px;
-  font-family: Nunito;
-  color: #ffffff;
-  border: none;
-  background-color: #7878f8;
-}
-button:hover {
-  background-color: #00a8c0;
+.btn-primary:hover {
+  background: linear-gradient(90deg, #0097d8, #005f87);
 }
 
 .button {
@@ -73,37 +82,36 @@ button:hover {
 }
 
 .description,
-.description-text,
 .remember-me,
 .forgot-password {
   font-size: 14px;
-  font-family: Nunito;
-  font-weight: 400;
-  color: #030229;
-  margin-bottom: 5px;
-  display: block;
-}
-
-.align-form {
-  text-align: left;
-  margin-bottom: 5px;
-  display: block;
-}
-
-.check {
-  width: 15px;
-  height: 15px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 500;
+  color: #0d1b2a;
+  margin-top: 10px;
 }
 
 .checkbox-forgot {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
+  margin: 10px 0;
+}
+
+.check {
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
 }
 
 .forgot-password {
   text-decoration: none;
+  color: #0077b6;
+  font-weight: 500;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
 }
 
 .svg-logo {
@@ -113,35 +121,23 @@ button:hover {
   margin-bottom: 25px;
 }
 
+.logo-image {
+  width: 65%;
+}
+
 @media (max-width: 768px) {
   .login-container {
     flex-direction: column;
-    align-items: center;
+    padding: 20px;
   }
 
   .left-section {
     width: 100%;
-    padding: 20px;
+    max-width: 380px;
+    min-height: auto;
   }
 
   .right-section {
     display: none;
   }
-
-  input,
-  button {
-    width: 100%;
-    max-width: 348px;
-  }
 }
-
-@media (max-width: 768px) {
-  .left-section {
-    width: 100%;
-    max-width: 389px;
-  }
-}
-
-
-
-

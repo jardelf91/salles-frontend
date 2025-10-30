@@ -2,56 +2,53 @@
   <div class="left-section">
     <form class="align-form" [formGroup]="form">
       <div class="svg-logo">
-        <img
-          src="assets/imagem/Internapp-icon.svg"
-          class="logo-image"
-          width="223.17px"
-          height="39.67px"
-        />
+        <img src="assets/imagem/syncelab.png" class="logo-image" />
       </div>
-      <label class="description" for="email">Endereço de e-mail</label>
+
+      <label class="description" for="email">Usuário</label>
       <input
         type="text"
         id="email"
-        placeholder="example@gmail.com"
+        placeholder="Digite seu usuário"
         formControlName="login"
       />
+
       <label class="description" for="senha">Senha</label>
       <input
         [type]="passwordView ? 'text' : 'password'"
-        placeholder="Senha"
+        placeholder="Digite sua senha"
         formControlName="password"
       />
+
       <div class="checkbox-forgot">
-        <label class="remember-me">
-          <input class="check" type="checkbox" formControlName="rememberMe" />
-          Lembrar-me
-        </label>
-        <a
-          class="forgot-password"
-          (click)="showPasswordRecovery()"
-          href="#"
-        >
-          Esqueceu sua senha?
+        
+        <a class="forgot-password" (click)="showPasswordRecovery()" href="#">
+          Esqueceu a senha?
         </a>
       </div>
+
       <div *ngIf="errorMessage" class="error-message">
         {{ errorMessage }}
       </div>
+
       <div class="button">
-        <button type="button" (click)="loginSystem()">Entrar</button>
+        <button type="button" class="btn-primary" (click)="loginSystem()">
+          Entrar
+        </button>
       </div>
     </form>
   </div>
+
   <div class="right-section">
     <img
-      src="assets/imagem/logo.svg"
+      src="assets/icone/lab2.png"
       class="background-image"
-      width="647"
-      height="602"
+      width="800"
+      height="860"
     />
   </div>
 </div>
+
 <app-recover-password
   *ngIf="showPasswordRecoveryModal"
   (closeModal)="closePasswordRecovery()"

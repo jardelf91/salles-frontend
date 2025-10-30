@@ -32,7 +32,7 @@
 }
 
 .logo-image {
-  padding-top: 28px;
+  padding-top: 55px;
   padding-bottom: 28px;
   display: flex;
   justify-content: center;
@@ -120,4 +120,9 @@
   flex-direction: column;
   flex: 1;
   align-self: stretch;
+}
+
+.lg{
+  padding-top: 19px;
+  width: 120px;
 }

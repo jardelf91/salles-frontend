@@ -29,6 +29,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StatisticsComponent } from './pages/statistics/statistics.component';
 import { FinancialComponent } from './pages/financial/financial.component'; 
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { LabComponent } from './pages/lab/lab.component';
+import { SiteComponent } from './pages/site/site.component';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http);
@@ -48,6 +50,8 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     OrderComponent,
     StatisticsComponent,
     FinancialComponent,
+    LabComponent,
+    SiteComponent,
   ],
   imports: [
     BrowserModule,

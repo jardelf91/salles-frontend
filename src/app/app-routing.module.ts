@@ -20,13 +20,15 @@ import { ModalComponent } from './components/modal/modal.component';
 import { AuthGuard } from './auth.guard';
 import { StatisticsComponent } from './pages/statistics/statistics.component';
 import { FinancialComponent } from './pages/financial/financial.component';
+import { LabComponent } from './pages/lab/lab.component';
+import { SiteComponent } from './pages/site/site.component';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'login' },
+  { path: '', pathMatch: 'full', redirectTo: 'site' },
   { path: 'body', component: PageBodyComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'recover', component: RecoverPasswordComponent },
-  { path: 'scale', component: ScaleComponent, canActivate: [AuthGuard] },
+  { path: 'portfolio', component: ScaleComponent },
   { path: 'nav', component: NavComponent },
   { path: 'venda', component: SallesComponent },
   { path: 'top', component: TopBarComponent },
@@ -42,6 +44,9 @@ const routes: Routes = [
   { path: 'modal', component: ModalComponent, canActivate: [AuthGuard] },
   { path: 'statistics', component: StatisticsComponent, canActivate: [AuthGuard] },
   { path: 'financial', component: FinancialComponent, canActivate: [AuthGuard] },
+
+  { path: 'lab', component: LabComponent },
+  { path: 'site', component: SiteComponent },
 
 ];
 

@@ -299,7 +299,7 @@ table {
 }
 
 thead {
-  background-color: #4caf50;
+  background-color: #005566;
   color: white;
 }
 
@@ -337,7 +337,7 @@ img {
 }
 
 .edit-btn i {
-  color: #4caf50;
+  color: #005566;
 }
 
 .delete-btn i {
@@ -355,7 +355,7 @@ img {
 
 /* Botão de Novo Produto */
 .btn-novo-produto {
-  background-color: #4caf50;
+  background-color: #005566;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -366,7 +366,7 @@ img {
 }
 
 .btn-novo-produto:hover {
-  background-color: #45a049;
+  background-color: #005566;
 }
 
 /* Controle de paginação */
@@ -378,7 +378,7 @@ img {
 }
 
 .pagination-controls button {
-  background-color: #4caf50;
+  background-color: #005566;
   color: white;
   padding: 8px 12px;
   margin: 0 5px;
@@ -388,7 +388,7 @@ img {
 }
 
 .pagination-controls button:hover {
-  background-color: #45a049;
+  background-color: #005566;
 }
 
 
@@ -535,7 +535,7 @@ i:hover{
 .paginador button {
   padding: 5px 10px;
   border: none;
-  background-color: #45a049;
+  background-color: #005566;
   color: white;
   cursor: pointer;
 }

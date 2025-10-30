@@ -46,7 +46,7 @@
 
 /* Botão de confirmação */
 .btn-confirm {
-  background-color: #4caf50;
+  background-color: #005566;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -56,7 +56,7 @@
 }
 
 .btn-confirm:hover {
-  background-color: #45a049;
+  background-color: #005566;
 }
 
 /* Botão de cancelamento */
